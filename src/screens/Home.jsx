@@ -1,14 +1,6 @@
 import { useState } from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
 import { Search, Download, FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
-import "./index.css";
-import CadastroCurriculo from "./CadastroCurriculo.jsx";
-
-
 
 const FILTERS = {
   Área: ["Tecnologia", "Design", "RH", "Marketing", "Finanças"],
@@ -286,7 +278,6 @@ export default function App() {
             ))}
           </div>
         </main>
-        <script type="module" src="/src/scripts/script.js"></script>
       </div>
     </div>
   );

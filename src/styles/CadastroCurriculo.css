@@ -1,0 +1,74 @@
+.registration-main {
+  display: flex;
+  justify-content: center;
+  padding: 56px 24px 72px;
+}
+
+.registration-card {
+  width: min(100%, 680px);
+  padding: 32px;
+  border: 1px solid #262626;
+  border-radius: 16px;
+  background: #171717;
+}
+
+.registration-card .badge-featured { margin-bottom: 14px; }
+
+.registration-title {
+  color: #fff;
+  font-size: clamp(26px, 5vw, 34px);
+  letter-spacing: -0.03em;
+}
+
+.registration-description {
+  margin-top: 8px;
+  color: #a3a3a3;
+  line-height: 1.6;
+}
+
+.registration-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 16px;
+  margin-top: 30px;
+  
+}
+
+.form-field { display: flex; flex-direction: column; gap: 8px; }
+.form-field-wide, .form-actions, .form-success { grid-column: 1 / -1; }
+.form-field > span { color: #d4d4d4; font-size: 13px; font-weight: 500; }
+
+.form-field input, .form-field select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  outline: none;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  font: inherit;
+  color-scheme: dark;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field input::placeholder { color: #737373; }
+.form-field input:focus, .form-field select:focus {
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.form-actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px; }
+.form-actions .btn-primary { min-height: 42px; padding: 10px 20px; }
+.form-success { color: #6ee7b7; font-size: 14px; }
+
+@media (max-width: 560px) {
+  .header { padding: 16px 20px; }
+  .nav { gap: 18px; }
+  .registration-main { padding: 32px 16px 48px; }
+  .registration-card { padding: 24px 18px; }
+  .registration-form { grid-template-columns: 1fr; }
+  .form-field-wide, .form-actions, .form-success { grid-column: auto; }
+  .form-actions { flex-direction: column-reverse; }
+  .form-actions button { width: 100%; justify-content: center; }
+}
