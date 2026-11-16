@@ -18,3 +18,29 @@ If you are developing a production application, we recommend using TypeScript wi
 =======
 # ProjetinhoReact
 >>>>>>> 39217e7bd918bc4d8a18457d81e61dc872307dc5
+>>>>>
+>>>>> BANCO DE DADOS
+CREATE DATABASE CurrilosLink;
+USE CurrilosLink;
+ 
+CREATE TABLE usuario(
+id INT AUTO_INCREMENT,
+nome VARCHAR(299) NOT NULL,
+idade INT NOT NULL,
+cpf INT NOT NULL UNIQUE,
+dataNascimento DATETIME NOT NULL,
+Telefone INT NOT NULL UNIQUE,
+unidadeFederativa VARCHAR(19) CHECK (unidadeFederativa IN ('Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais', 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte', 'Rio Grande do Sul', 'Rondônia', 'Roraima', 'Santa Catarina', 'São Paulo', 'Sergipe', 'Tocantins')),
+cidade VARCHAR(299) NOT NULL 
+);
+
+CREATE TABLE infoUsuario (
+Situação VARCHAR(299) NOT NULL,
+LinguagemProgramação VARCHAR(299),
+habilidades VARCHAR(299) NOT NULL
+);
+
+
+
+SELECT * FROM usuario;
+SELECT * FROM infoUsuario;
