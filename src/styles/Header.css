@@ -1,0 +1,40 @@
+.header--login {
+  min-height: 76px;
+  padding: 0 clamp(24px, 6vw, 88px);
+}
+
+.header-prompt {
+  color: #a3a3a3;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .header--login {
+    min-height: 66px;
+    padding: 0 21px;
+  }
+
+  .header--login .header-prompt {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .nav {
+    gap: 18px;
+  }
+
+  .header--home {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .header--home .nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}

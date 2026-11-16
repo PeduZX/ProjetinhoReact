@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Search, Download, FileText } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import Header from "../components/Header.jsx";
 
 const FILTERS = {
   Área: ["Tecnologia", "Design", "RH", "Marketing", "Finanças"],
@@ -54,7 +54,7 @@ const DEFAULT_CHECKED = new Set([
   "Júnior",
   "Pleno",
   "Imediata",
-  "Rio Grande do Sul",
+  "Rio Grande do Sul (RS)",
 ]);
 
 const AVATAR_COLORS = {
@@ -214,29 +214,21 @@ function CandidateCard({ candidate }) {
 export default function App() {
   const [checked, setChecked] = useState(DEFAULT_CHECKED);
   const [query, setQuery] = useState("");
-  const navigate = useNavigate();
-
   const toggle = (label) => {
     setChecked((prev) => {
       const next = new Set(prev);
-      next.has(label) ? next.delete(label) : next.add(label);
+      if (next.has(label)) {
+        next.delete(label);
+      } else {
+        next.add(label);
+      }
       return next;
     });
   };
 
   return (
     <div className="page">
-      <header className="header">
-        <div className="logo">
-          Currilos<span className="logo-accent">Link</span>
-        </div>
-        <nav className="nav">
-          <button className="nav-link">Entrar</button>
-          <button className="nav-link" onClick={() => navigate("/cadastro")}>
-            Publicar currículo
-          </button>
-        </nav>
-      </header>
+      <Header />
 
       <div className="search-bar-wrap">
         <div className="search-bar">
